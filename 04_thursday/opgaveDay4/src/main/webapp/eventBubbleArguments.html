@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .mydiv {width: 85px; height: 25px;background-color:yellow; margin:1px;}
+        </style>   
+    </head>
+    <body>
+
+        <button onclick="myFunction1()">Click me</button>
+        <div class="mydiv" id="div1"></div>
+        <button onclick="myFunction2()">Click me</button>
+        <div class="mydiv" id="div2"></div>
+
+        <p id="inner1"></p>
+        <p id="inner2"></p>
+
+        <div id="outer">
+            <div id="div3">div1</div>
+            <div id="div4">div2</div>
+            <div id="div5"></div>
+            <div id="div6"></div>
+            <div id="div7"></div>
+            <div id="div8"></div>
+            <div id="div9"></div>
+            <div id="div10"></div>
+            <div id="div11"></div>
+            <div id="div12"></div>
+
+
+        </div>
+        <p id="ydre"></p>
+        <button onclick="getInner1()" id="myInner" >Click for paragraph</button>
+
+        <script>
+            function functiontest() {
+                document.getElementById("outer").addEventListener("click", function (event) {
+                    console.log(event.target.innerHTML);
+                    document.getElementById("ydre").innerHTML = event.target.innerHTML;
+                })
+            }
+            
+            functiontest();
+            
+            function myFunction1() {
+                document.getElementById("div1").innerHTML = "Hi from " + "div1";
+                console.log("Hi from " + document.getElementById("div1").id);
+            }
+            function myFunction2() {
+                document.getElementById("div2").innerHTML = "Hi from " + "div2";
+                console.log("Hi from " + document.getElementById("div2").id);
+            }
+
+            function getInner1() {
+                document.getElementById("myInner").innerText;
+                document.getElementById("inner1").innerHTML = document.getElementById("div1").id;
+                document.getElementById("inner2").innerHTML = document.getElementById("div2").id;
+                document.getElementById("div3").innerHTML = document.getElementById("div3").id;
+                document.getElementById("div4").innerHTML = document.getElementById("div4").id;
+                document.getElementById("div5").innerHTML = document.getElementById("div5").id;
+                document.getElementById("div6").innerHTML = document.getElementById("div6").id;
+                document.getElementById("div7").innerHTML = document.getElementById("div7").id;
+                document.getElementById("div8").innerHTML = document.getElementById("div8").id;
+                document.getElementById("div9").innerHTML = document.getElementById("div9").id;
+                document.getElementById("div10").innerHTML = document.getElementById("div10").id;
+            }
+        </script>
+    </body>
+</html>

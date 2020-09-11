@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="outer">
+            <div id="b1">
+                <button onclick="myFunction1()">Click me</button>
+            div1</div>
+            <div id="b2">
+                <button onclick="myFunction2()">Click me</button>
+            div2</div>
+            <div id="b3">
+                <button onclick="myFunction3()">Click me</button>
+            div3</div>
+        </div>
+        <script>
+            var outer = document.getElementById("outer");
+            outer.onclick = function (e) {
+                console.log("Clicked")
+                var mee = this;
+                var target = e.target;
+                console.log(mee.id)
+                console.log(target.id)
+            }
+
+            function myFunction1() {
+                document.getElementById("b1").innerHTML = "Changed to blue";
+                b1.style.backgroundColor = "blue";
+            }
+            function myFunction2() {
+                document.getElementById("b2").innerHTML = "Changed to purple";
+                b2.style.backgroundColor = "purple";
+            }
+            function myFunction3() {
+                document.getElementById("b3").innerHTML = "Changed to orange";
+                b3.style.backgroundColor = "orange";
+            }
+            var divs = document.getElementsByTagName("div");
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].style.backgroundColor = "red";
+
+            }
+        </script>
+    </body>
+</html>

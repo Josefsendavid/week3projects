@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <ul id="myUl"></ul>
+        
+        <label for="fname"></label>
+        <input type="text" id="fname" name="fname">
+        <button type="button" id="button2" value="Add" onclick="addFunction()">Add name</button>
+        
+        <button type="button" id="button3" value="Remove" onclick="removeFirst()">Remove first</button>
+        <button type="button" id="button4" value="Remove" onclick="removeLast()">Remove Last</button>
+        
+        <script>
+            var names = ["Lars", "Peter", "Jan", "Ian"];
+            
+            function myFunction(){
+                document.getElementById("myUl").innerHTML = "";
+                var x = document.createElement("UL");
+                document.body.appendChild(x);
+                for(var i = 0; i < names.length; i++){
+                    var li = document.createElement("li");
+                    var text = document.createTextNode(names[i]);
+                    li.appendChild(text);
+                    document.getElementById("myUl").appendChild(li);
+                }
+            }
+            
+            function addFunction(){
+                const addName = document.getElementById("fname").value;
+                console.log(addName);
+                names.push(addName);
+                myFunction();
+    }
+    
+    function removeFirst(){
+        const firstElement = names.shift();
+        myFunction();
+    }
+    
+    function removeLast(){
+        const lastElement = names.pop();
+        myFunction();
+    }
+    myFunction();
+        </script>
+    </body>
+</html>
